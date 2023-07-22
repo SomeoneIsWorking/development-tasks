@@ -1,0 +1,40 @@
+<mat-card>
+  <mat-card-content>
+    <div class="flex flex-center">
+      <button
+        type="button"
+        mat-mini-fab
+        class="mr-2"
+        color="accent"
+        (click)="askConfirmation = true"
+        *ngIf="!askConfirmation"
+        [disabled]="loading"
+      >
+        <mat-icon>delete</mat-icon>
+      </button>
+      <button
+        type="button"
+        mat-mini-fab
+        class="mr-2"
+        color="accent"
+        *ngIf="askConfirmation"
+        (click)="remove()"
+        [disabled]="loading"
+      >
+        <mat-icon>check</mat-icon>
+      </button>
+      <button
+        type="button"
+        mat-mini-fab
+        class="mr-2"
+        *ngIf="askConfirmation"
+        color="accent"
+        (click)="askConfirmation = false"
+        [disabled]="loading"
+      >
+        <mat-icon>close</mat-icon>
+      </button>
+      <div>Name: {{ data.name }} (#{{data.id}})</div>
+    </div>
+  </mat-card-content>
+</mat-card>
