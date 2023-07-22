@@ -1,0 +1,21 @@
+<mat-card>
+  <mat-card-header class="mb-2">New Animal</mat-card-header>
+  <mat-card-content>
+    <mat-form-field class="mr-2">
+      <mat-label>Animal Name</mat-label>
+      <input matInput [(ngModel)]="name" (error)="(!!error)" />
+    </mat-form-field>
+    <button
+      type="button"
+      mat-fab
+      color="primary"
+      (click)="create()"
+      [disabled]="loading"
+    >
+      <mat-icon>add</mat-icon>
+    </button>
+    <div class="mat-mdc-form-field-error">
+      {{ error?.Name }}
+    </div>
+  </mat-card-content>
+</mat-card>
